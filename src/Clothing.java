@@ -1,8 +1,11 @@
-public class Clothing {
+
+
+abstract class Clothing {
 
     String brand;
     String color;
-    String price;
+    Double price;
+    int condition = 0;
 
     public String getColor() {
         return color;
@@ -10,7 +13,7 @@ public class Clothing {
     public String getBrand() {
         return brand;
     }
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -22,9 +25,9 @@ public class Clothing {
         this.color = color;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-
+   abstract void mend();
 }

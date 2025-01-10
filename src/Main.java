@@ -18,9 +18,9 @@ public class Main {
 
         //car.setPrice(-1000.0);
 
-       //Shirt shirt = new Shirt("Nike ", "blue ", "50€");
-       //Shirt otherShirt = new Shirt("Adidas ", "Red ", "30€");
-       //Pants pants = new Pants("Levi's ", "black ", "100€");
+       //Clothing shirt = new Shirt("Nike ", "blue ", 50.00);
+       //Clothing otherShirt = new Shirt("Adidas ", "Red ", 30.00);
+       //Clothing pants = new Pants("Levi's ", "black ", 100.00);
 
         System.out.printf("%s kostar %.2f\n",car.getName(), car.getPrice());
         System.out.printf( "%s is %s\n", car.getName(), car.getType());

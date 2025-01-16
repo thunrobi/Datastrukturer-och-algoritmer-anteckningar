@@ -1,10 +1,10 @@
-public class Vehicle {
+public class Vehicle implements Shoppable {
 
     //vi deklarerar String-variabeln name
     private String name;
     private String type;
-    private Double price = 0.0;
-    private Double discount = 0.9;
+    private double price = 0.0;
+    private double discount = 0.9;
 
     public Vehicle(String name, String type) {
         this.type = type;
@@ -23,8 +23,13 @@ public class Vehicle {
     public String getType() {
         return type;
     }
-    public Double getPrice() {
+    public double getPrice() {
         return price * discount;
+    }
+
+    @Override
+    public int getStock() {
+        return 0;
     }
 
     public void setPrice(Double price) {

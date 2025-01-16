@@ -4,7 +4,7 @@ abstract class Clothing {
 
     String brand;
     String color;
-    Double price;
+    double price;
     int condition = 0;
 
     public String getColor() {
@@ -13,7 +13,7 @@ abstract class Clothing {
     public String getBrand() {
         return brand;
     }
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -25,7 +25,7 @@ abstract class Clothing {
         this.color = color;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Main {
 
@@ -8,6 +10,8 @@ public class Main {
 
 
     public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
 
         BikeShop shop = new BikeShop();
         shop.addBike(new Bike("Scott", 600));
@@ -22,12 +26,41 @@ public class Main {
         System.out.println("Välkommen till BikeShop! Våra cyklar: ");
 
         for (int i = 0; i < shop.getBikeCount(); i++) {
-            System.out.printf("%s %.2f € lagersaldo: %s\n",
+            System.out.printf("%d - %s %.2f € lagersaldo: %s\n",
+                    i,
                     shop.getBike(i).getName(),
                     shop.getBike(i).getPrice(),
                     shop.getBike(i).getStock()
             );
-            System.out.println(shop.getBike(i).getFeatures());
+        }
+        //System.out.println(shop.getBike(i).getFeatures());
+        System.out.print("Vilken cykel vill du köpa? (q för quit)");
+
+
+        String userInput;
+        while (true) {
+
+
+            userInput = scanner.nextLine();
+
+            if (userInput.equals( "q")){
+                System.out.println("Tack, välkommen åter!");
+                System.exit(0);
+            }
+
+            try {
+                int bikeIndex = Integer.parseInt(userInput);
+                System.out.printf("Grattis, du äger nu en %s\n",
+                        shop.getBike(bikeIndex).getName()
+                );
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Du måste ge ett heltal!");
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Det finns ingen sådan cykel!");
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
         }
         System.exit(0);
 
@@ -40,7 +73,7 @@ public class Main {
         Car car4 = new Car("Tesla", "electric");
         Vehicle todaysVehicle;
         todaysVehicle = car;
-        Calculator calc  = new Calculator();
+        Calculator calc = new Calculator();
 
         //default-konstruktor
         Foo foo = new Foo();

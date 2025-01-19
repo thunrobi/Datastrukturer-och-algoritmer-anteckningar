@@ -43,7 +43,7 @@ public class Main {
 
             userInput = scanner.nextLine();
 
-            if (userInput.equals( "q")){
+            if (userInput.equalsIgnoreCase( "q")){
                 System.out.println("Tack, välkommen åter!");
                 System.exit(0);
             }

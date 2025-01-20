@@ -16,6 +16,8 @@ public class Bike extends Vehicle implements Shoppable {
         stock = random.nextInt(19)+1;
     }
 
+
+
     public void addFeature(String key, String value) {
         features.put(key, value);
     }

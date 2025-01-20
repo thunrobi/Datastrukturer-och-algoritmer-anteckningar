@@ -5,7 +5,6 @@ public class Vehicle implements Shoppable {
     private String type;
     private double price = 0.0;
     private double discount = 0.9;
-
     public Vehicle(String name, String type) {
         this.type = type;
         this.name = name;
@@ -25,6 +24,9 @@ public class Vehicle implements Shoppable {
     }
     public double getPrice() {
         return price * discount;
+    }
+    public double getGrossPrice(){
+        return price;
     }
 
     @Override

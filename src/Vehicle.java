@@ -1,4 +1,6 @@
-public class Vehicle implements Shoppable {
+import java.io.Serializable;
+
+abstract class Vehicle implements Shoppable, Serializable {
 
     //vi deklarerar String-variabeln name
     private String name;

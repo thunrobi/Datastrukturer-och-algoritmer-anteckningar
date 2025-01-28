@@ -7,21 +7,16 @@ public class Utils {
         return str.matches("-?\\d+");
     }
 
-    public static int getIntInput() {
-        String userInput;
+    public static int getIntInput(String prompt) {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            Scanner scanner = new Scanner(System.in);
-            userInput = scanner.nextLine();
+            System.out.print(prompt);
             try {
-                int userInt = Integer.parseInt(userInput);
-                System.out.println(userInt);
-                break;
+               return Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
-                if (!Utils.isInteger(userInput))
                     System.out.println("Du måste ge ett heltal ");
             }
         }
-            return 0;
 
     }
 }

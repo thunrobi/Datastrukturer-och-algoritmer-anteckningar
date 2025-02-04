@@ -5,12 +5,38 @@ import java.util.Scanner;
 public class Main {
 
     //Konstant med static final
-    static final String PROGRAM_VERSION = "1.0";
-    static final int DAYS_IN_WEEK = 7;
+    //static final String PROGRAM_VERSION = "1.0";
+    //static final int DAYS_IN_WEEK = 7;
 
 
     public static void main(String[] args) {
 
+     String[] testData = {"John","Emma","Liam","Olivia","Noah","Ava","James","Sophia","Benjamin"};
+     String[] sortedData = {"Ava","Benjamin","Emma","James","John","Liam","Noah","Olivia","Sophia"};
+
+     Person p1 = new Person (testData[0]);
+     Person p2 = new Person (testData[1],p1);
+     Person p3 = new Person (testData[2],p2);
+     Person p4 = new Person (testData[3],p3);
+
+        Person current = p4;
+        while(current != null){
+            System.out.println(current.getName());
+            current = current.next;
+        }
+
+        StringArray names = new StringArray(sortedData);
+        System.out.println(names.toString());
+        names.add("Isabella");
+        System.out.println(names.toString());
+        names.reverse();
+        System.out.println(names.toString());
+    System.exit(0);
+    //testa loopa olika tidskomplexitet
+     new BigO();
+
+
+/*
     Scanner scanner = new Scanner(System.in);
 
     //FileUtils.writeTextFile("Hello file!", "hello.txt");
@@ -89,7 +115,7 @@ public class Main {
 
 
 
-       /* System.out.println("Här genereras slumptal tryck på enter!(q för exit)");
+        System.out.println("Här genereras slumptal tryck på enter!(q för exit)");
         String userInput1;
         while(true){
             RandomNum x = new RandomNum();
@@ -104,7 +130,7 @@ public class Main {
                 }
             }
         }*/
-        System.exit(0);
+
 }
 
 
@@ -152,8 +178,8 @@ public class Main {
                 otherShirt.getStock());
         System.out.println(shirtInfo);
 
-        System.out.println(pants.getBrand() + pants.getColor() + pants.getPrice());*/
+        System.out.println(pants.getBrand() + pants.getColor() + pants.getPrice());
 
-
+*/
 }
 

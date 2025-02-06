@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -11,8 +12,60 @@ public class Main {
 
     public static void main(String[] args) {
 
-     String[] testData = {"John","Emma","Liam","Olivia","Noah","Ava","James","Sophia","Benjamin"};
-     String[] sortedData = {"Ava","Benjamin","Emma","James","John","Liam","Noah","Olivia","Sophia"};
+        String[] testData = {"John", "Emma", "Liam", "Olivia", "Noah", "Ava", "James", "Sophia", "Benjamin"};
+        String[] sortedData = {"Ava", "Benjamin", "Emma", "James", "John", "Liam", "Noah", "Olivia", "Sophia"};
+
+
+        Queuey queuey = new Queuey();
+        queuey.enqueue("Aragorn");
+        queuey.enqueue("Arwen");
+        System.out.println("Först i kon: "+ queuey.peek());
+        System.out.println(queuey.toString());
+        queuey.enqueue("Bilbo");
+        System.out.println(queuey.toString());
+        System.out.println("dequeue: "+ queuey.dequeue());
+        System.out.println(queuey.toString());
+        System.out.println();
+
+/**
+ * Stack
+*/
+        Stacky stacky = new Stacky(5);
+        stacky.push("Frodo");
+        stacky.push("Sam");
+        stacky.push("Gandalf");
+        stacky.push("Gimli");
+        stacky.push("Legolas");
+        stacky.push("Bilbo");
+        System.out.println(stacky.toString());
+        System.out.println();
+
+/**
+ * Linked list
+ */
+        Person frodo = new Person(testData[0]);
+        Person sam = new Person(testData[1]);
+        Person gandalf = new Person(testData[2]);
+        Person aragorn = new Person(testData[3]);
+
+        Linky linky = new Linky();
+        linky.add(frodo);
+        linky.add(sam);
+        linky.add(gandalf);
+        System.out.println(linky.toString());
+        linky.add(aragorn);
+        System.out.println(linky.toString());
+        System.out.println("Linky has " + linky.size());
+
+/**
+ * Code challange ciruclar arr
+ */
+  /*  String[] weekDays ={"må","ti","on","to","fr", "lö","sö"};
+    int today = 3;
+    System.out.printf("Idag är det %s\n",weekDays[today]);
+    System.out.printf("I övermorgon är det %s\n", weekDays[(today+2)% weekDays.length]);
+    System.out.printf("Om 6 dagar är det %s\n",weekDays[(today+6)% weekDays.length]);
+    System.out.printf("Om 15 dagar är det %s\n",weekDays[(today+15)% weekDays.length]);
 
      Person p1 = new Person (testData[0]);
      Person p2 = new Person (testData[1],p1);
@@ -35,8 +88,6 @@ public class Main {
     //testa loopa olika tidskomplexitet
      new BigO();
 
-
-/*
     Scanner scanner = new Scanner(System.in);
 
     //FileUtils.writeTextFile("Hello file!", "hello.txt");
@@ -131,7 +182,7 @@ public class Main {
             }
         }*/
 
-}
+    }
 
 
        /* Vehicle car = new Car("Toyota", 5000.0);

@@ -6,7 +6,7 @@ public class StringArray {
 
     public StringArray(String[]values){
         System.out.println("New stringArray");
-        this.values = values;
+        this.values = values.clone();
     }
     public void add(String value){
         System.out.println("add " + value);
@@ -25,6 +25,11 @@ public class StringArray {
         }
         values = reversedValues;
     }
+
+    public String[] getValues() {
+        return values;
+    }
+
     public String toString(){
         return Arrays.toString(values);
     }
